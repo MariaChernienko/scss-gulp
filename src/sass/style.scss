@@ -1,0 +1,308 @@
+$light-pink: #fa5c65;
+$dark-pink: #ff3d48;
+$dark-grey: #314a5b;
+$light-grey: rgb(185, 192, 198);
+$img-banner: url(../images/banner.png);
+@mixin dot($height, $width, $color) {
+  background-color: $color;
+  height: $height;
+  width: $width;
+}
+@mixin width($width) {
+  width: $width;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+}
+.float-clear {
+  content: " ";
+  clear: both;
+  display: table;
+}
+.width300 {
+  width: 300px;
+}
+.width380 {
+  width: 380px;
+}
+.link-dec {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $dark-grey;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Montserrat";
+  transition: all 0.1s ease-out;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.wrapper {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dot {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  margin-left: 3px;
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.pink-10 {
+  @include dot(10px, 10px, $light-pink);
+}
+.pink-6 {
+  @include dot(6px, 6px, $light-pink);
+}
+.pink-4 {
+  @include dot(4px, 4px, $light-pink);
+}
+.dark-4 {
+  @include dot(4px, 4px, $dark-grey);
+}
+.header {
+  height: 1000px;
+  background-image: $img-banner;
+  background-size: cover;
+}
+.navigation-container {
+  &:after {
+    @extend .float-clear;
+  }
+}
+.nav-list {
+  display: inline-block;
+}
+.pink-label {
+  position: absolute;
+  top: 0;
+  padding: 34px 14px 14px 14px;
+  background-color: $light-pink;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition: all 0.1s ease-out;
+  &:hover {
+    background-color: $dark-pink;
+  }
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Domine";
+    font-size: 25px;
+  }
+}
+.nav-list {
+  float: right;
+  padding-top: 28px;
+  &__item {
+    display: inline-block;
+    padding-left: 36px;
+  }
+}
+.btn-container {
+  position: absolute;
+  top: 380px;
+  max-width: 540px;
+  &__h1 {
+    font-size: 36px;
+    font-family: "Montserrat";
+    color: $dark-grey;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.14;
+    margin-bottom: 20px;
+  }
+  &__p {
+    color: $dark-grey;
+    font-size: 20px;
+    font-family: "OpenSans";
+    margin-bottom: 40px;
+  }
+}
+.btn {
+  display: inline-block;
+  padding: 25px 40px;
+  background-color: $light-pink;
+  border-radius: 8px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  &:hover {
+    background-color: $dark-pink;
+  }
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    font-size: 21px;
+    font-family: "OpenSans";
+  }
+}
+.more-btn {
+  line-height: 1.429;
+  &__link {
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    color: $dark-pink;
+    transition: all 0.1s ease-out;
+    &:hover {
+      border-bottom: 1px solid $dark-pink;
+    }
+  }
+}
+.information-section {
+  display: block;
+  margin-top: 85px;
+  .card {
+    display: inline-block;
+    padding-right: 20px;
+    margin-right: 15px;
+    box-sizing: border-box;
+    &:last-child {
+      margin-right: 0;
+    }
+    &__h2 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      font-family: "Montserrat";
+      color: $dark-grey;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    &__p {
+      margin-bottom: 25px;
+      padding-right: 30px;
+      font-size: 15px;
+      font-family: "Myriad Pro";
+      color: $light-grey;
+      line-height: 1.467;
+    }
+  }
+}
+.portfolio-section {
+  margin-top: 100px;
+  &:after {
+    @extend .float-clear;
+  }
+  &__img {
+    float: left;
+  }
+  .card {
+    padding-top: 10px;
+    float: right;
+    &__h6 {
+      font-size: 16px;
+      font-family: "Myriad Pro";
+      color: $dark-grey;
+      line-height: 1.25;
+      padding-bottom: 30px;
+    }
+  }
+}
+.ourteam-section {
+  margin-top: 100px;
+  margin-bottom: 60px;
+  &__h3 {
+    font-size: 24px;
+    font-family: "Montserrat";
+    color: $dark-grey;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+  }
+  &__p {
+    font-size: 16px;
+    font-family: "Myriad Pro";
+    color: $light-grey;
+  }
+
+  .profile-card {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 35px;
+    box-sizing: border-box;
+    &:nth-child(5) {
+      margin-right: 0;
+    }
+    .position-left {
+      float: left;
+      width: 120px;
+      height: 120px;
+    }
+    .position-right {
+      float: right;
+      &:after {
+        @extend .float-clear;
+      }
+      &__h4 {
+        font-size: 16.48px;
+        font-family: "Montserrat";
+        color: $dark-grey;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px 0;
+      }
+      &__h6 {
+        font-size: 14px;
+        font-family: "OpenSans";
+        color: $dark-pink;
+        padding-bottom: 10px;
+      }
+      &__p {
+        font-size: 14px;
+        font-family: "Myriad Pro";
+        color: $light-grey;
+        line-height: 1.429;
+        width: 150px;
+      }
+    }
+  }
+  .more-btn {
+    float: right;
+  }
+}
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid $light-grey;
+  &:after {
+    @extend .float-clear;
+  }
+  .social-icons {
+    float: left;
+    .icon {
+      padding-right: 20px;
+    }
+  }
+  .copyright {
+    float: right;
+    &__p {
+      font-size: 13px;
+      font-family: "Myriad Pro";
+      color: $light-grey;
+    }
+  }
+}
+
+
+
+
+
+
+
