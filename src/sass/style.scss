@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Domine|Montserrat|Open+Sans');
+
 $light-pink: #fa5c65;
 $dark-pink: #ff3d48;
 $dark-grey: #314a5b;
 $light-grey: rgb(185, 192, 198);
 $img-banner: url(../images/banner.png);
+$domine: 'Domine', serif;
+$montserrat: 'Montserrat', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
 @mixin dot($height, $width, $color) {
   background-color: $color;
   height: $height;
   width: $width;
 }
+
 @mixin width($width) {
   width: $width;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -18,34 +26,40 @@ $img-banner: url(../images/banner.png);
   list-style: none;
   line-height: 1;
 }
+
 .float-clear {
   content: " ";
   clear: both;
   display: table;
 }
+
 .width300 {
   width: 300px;
 }
+
 .width380 {
   width: 380px;
 }
+
 .link-dec {
   text-decoration: none;
   text-transform: uppercase;
   color: $dark-grey;
   font-size: 14px;
   font-weight: bold;
-  font-family: "Montserrat";
+  font-family: $montserrat;
   transition: all 0.1s ease-out;
   &:hover {
     opacity: 0.8;
   }
 }
+
 .wrapper {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .dot {
   display: inline-block;
   position: relative;
@@ -60,31 +74,39 @@ $img-banner: url(../images/banner.png);
     height: 100%;
   }
 }
+
 .pink-10 {
   @include dot(10px, 10px, $light-pink);
 }
+
 .pink-6 {
   @include dot(6px, 6px, $light-pink);
 }
+
 .pink-4 {
   @include dot(4px, 4px, $light-pink);
 }
+
 .dark-4 {
   @include dot(4px, 4px, $dark-grey);
 }
+
 .header {
   height: 1000px;
   background-image: $img-banner;
   background-size: cover;
 }
+
 .navigation-container {
   &:after {
     @extend .float-clear;
   }
 }
+
 .nav-list {
   display: inline-block;
 }
+
 .pink-label {
   position: absolute;
   top: 0;
@@ -99,12 +121,13 @@ $img-banner: url(../images/banner.png);
     background-color: $dark-pink;
   }
   &__link {
+    font-family: $domine;
     text-decoration: none;
     color: #fff;
-    font-family: "Domine";
     font-size: 25px;
   }
 }
+
 .nav-list {
   float: right;
   padding-top: 28px;
@@ -113,26 +136,28 @@ $img-banner: url(../images/banner.png);
     padding-left: 36px;
   }
 }
+
 .btn-container {
   position: absolute;
   top: 380px;
   max-width: 540px;
-  &__h1 {
+  &__title {
     font-size: 36px;
-    font-family: "Montserrat";
+    font-family: $montserrat;
     color: $dark-grey;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.14;
     margin-bottom: 20px;
   }
-  &__p {
+  &__description {
     color: $dark-grey;
     font-size: 20px;
-    font-family: "OpenSans";
+    font-family: $openSans;
     margin-bottom: 40px;
   }
 }
+
 .btn {
   display: inline-block;
   padding: 25px 40px;
@@ -149,16 +174,17 @@ $img-banner: url(../images/banner.png);
     color: #fff;
     font-weight: bold;
     font-size: 21px;
-    font-family: "OpenSans";
+    font-family: $openSans;
   }
 }
+
 .more-btn {
   line-height: 1.429;
   &__link {
     font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: "Montserrat";
+    font-family: $montserrat;
     color: $dark-pink;
     transition: all 0.1s ease-out;
     &:hover {
@@ -166,70 +192,74 @@ $img-banner: url(../images/banner.png);
     }
   }
 }
+
 .information-section {
   display: block;
   margin-top: 85px;
-  .card {
-    display: inline-block;
-    padding-right: 20px;
-    margin-right: 15px;
-    box-sizing: border-box;
-    &:last-child {
-      margin-right: 0;
-    }
-    &__h2 {
-      margin-bottom: 25px;
-      font-size: 26px;
-      font-family: "Montserrat";
-      color: $dark-grey;
-      font-weight: bold;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-    &__p {
-      margin-bottom: 25px;
-      padding-right: 30px;
-      font-size: 15px;
-      font-family: "Myriad Pro";
-      color: $light-grey;
-      line-height: 1.467;
-    }
+}
+
+.card {
+  display: inline-block;
+  padding-right: 20px;
+  margin-right: 15px;
+  box-sizing: border-box;
+  &:last-child {
+    margin-right: 0;
+  }
+  &__title {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-family: $montserrat;
+    color: $dark-grey;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  &__description {
+    margin-bottom: 25px;
+    padding-right: 30px;
+    font-size: 15px;
+    font-family: $openSans;
+    color: $light-grey;
+    line-height: 1.467;
   }
 }
+
 .portfolio-section {
   margin-top: 100px;
   &:after {
     @extend .float-clear;
   }
-  &__img {
+  &__picture {
     float: left;
   }
   .card {
     padding-top: 10px;
     float: right;
-    &__h6 {
+    &__subtitle {
       font-size: 16px;
-      font-family: "Myriad Pro";
+      font-family: $openSans;
       color: $dark-grey;
       line-height: 1.25;
       padding-bottom: 30px;
     }
   }
 }
+
 .ourteam-section {
   margin-top: 100px;
   margin-bottom: 60px;
-  &__h3 {
+  &__title {
     font-size: 24px;
-    font-family: "Montserrat";
+    font-family: $montserrat;
     color: $dark-grey;
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 15px;
   }
-  &__p {
+  &__description {
     font-size: 16px;
-    font-family: "Myriad Pro";
+    font-family: $openSans;
     color: $light-grey;
   }
 
@@ -241,33 +271,35 @@ $img-banner: url(../images/banner.png);
     &:nth-child(5) {
       margin-right: 0;
     }
+
     .position-left {
       float: left;
       width: 120px;
       height: 120px;
     }
+
     .position-right {
       float: right;
       &:after {
         @extend .float-clear;
       }
-      &__h4 {
+      &__title {
         font-size: 16.48px;
-        font-family: "Montserrat";
+        font-family: $montserrat;
         color: $dark-grey;
         font-weight: bold;
         text-transform: uppercase;
         padding: 10px 0;
       }
-      &__h6 {
+      &__subtitle {
         font-size: 14px;
-        font-family: "OpenSans";
+        font-family: $openSans;
         color: $dark-pink;
         padding-bottom: 10px;
       }
-      &__p {
+      &__description {
         font-size: 14px;
-        font-family: "Myriad Pro";
+        font-family: $openSans;
         color: $light-grey;
         line-height: 1.429;
         width: 150px;
@@ -278,31 +310,27 @@ $img-banner: url(../images/banner.png);
     float: right;
   }
 }
+
 .footer {
   padding: 30px 0;
   border-top: 1px solid $light-grey;
   &:after {
     @extend .float-clear;
   }
+
   .social-icons {
     float: left;
     .icon {
       padding-right: 20px;
     }
   }
+
   .copyright {
     float: right;
-    &__p {
+    &__description {
       font-size: 13px;
-      font-family: "Myriad Pro";
+      font-family: $openSans;
       color: $light-grey;
     }
   }
 }
-
-
-
-
-
-
-
